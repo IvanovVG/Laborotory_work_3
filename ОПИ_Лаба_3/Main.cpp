@@ -7,6 +7,7 @@
 using namespace std;
 
 bool* music;
+bool* light;
 bool* door;
 string name[100000];
 string color[100000];
@@ -50,6 +51,20 @@ void car_ch_door(int num)
 		system("pause");
 	}
 }
+void car_ch_light(int num)
+{
+	if (light[num] == false) {
+		light[num] = true;
+		cout << "Свет был включен." << endl;
+		system("pause");
+	}
+	else {
+		light[num] = false;
+		cout << "Свет был выключен." << endl;
+		system("pause");
+	}
+}
+
 
 void car_ch_music(int num)
 {
@@ -69,13 +84,19 @@ void car_delete(int num)
 {
 	music[num] = false;
 	door[num] = false;
+	light[num] = false;
 	name[num] = "";
 	color[num] = "";
 }
 
-string _l(int num)
+string _M(int num)
 {
 	if (music[num] == false) return("is Off");
+	else return("is on");
+}
+string _l(int num)
+{
+	if (light[num] == false) return("is Off");
 	else return("is on");
 }
 
@@ -97,7 +118,7 @@ void car_list_out(int num)
 	if (name[num] == "")	cout << num << " - машина не создана." << endl;
 	else
 	{
-		cout << num << " - " << "Название: " << name[num] << "	Цвет: " << color[num] << "	Музыка: " << _l(music[num]) << " Дверь: " << _d(door[num]) << endl;
+		cout << num << " - " << "Название: " << name[num] << "	Цвет: " << color[num] << " Свет: " << _l(light[num]) << "Музыка: " << _M(music[num]) << " Дверь: " << _d(door[num]) << endl;
 	}
 }
 
@@ -111,6 +132,7 @@ bool select(int com, bool flag, int num)
 	case 4: {car_ch_music(num); break; }
 	case 5: {car_delete(num); flag = true; break; }
 	case 6: {flag = true; break; }
+	case 7: {car_ch_light(num); break; }
 		  system("pause");
 	}
 	return(flag);
@@ -482,4 +504,4 @@ void main()
 		break;
 	}
 	}
-}
+};
