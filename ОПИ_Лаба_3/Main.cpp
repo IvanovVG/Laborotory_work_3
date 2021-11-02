@@ -9,6 +9,7 @@ using namespace std;
 bool* music;
 bool* light;
 bool* door;
+bool* alarm;
 string name[100000];
 string color[100000];
 
@@ -79,7 +80,19 @@ void car_ch_music(int num)
 		system("pause");
 	}
 }
-
+void car_ch_alarm(int num)
+{
+	if (alarm[num] == false) {
+		alarm[num] = true;
+		cout << "Сигнализация была включена." << endl;
+		system("pause");
+	}
+	else {
+		alarm[num] = false;
+		cout << "Сигнализация была выключена." << endl;
+		system("pause");
+	}
+}
 void car_delete(int num)
 {
 	music[num] = false;
@@ -99,6 +112,12 @@ string _l(int num)
 	if (light[num] == false) return("is Off");
 	else return("is on");
 }
+string _a(int num)
+{
+	if (alarm[num] == false) return("is Off");
+	else return("is on");
+}
+
 
 string _d(int num)
 {
@@ -133,6 +152,7 @@ bool select(int com, bool flag, int num)
 	case 5: {car_delete(num); flag = true; break; }
 	case 6: {flag = true; break; }
 	case 7: {car_ch_light(num); break; }
+	case 8: {car_ch_alarm(num); break; }
 		  system("pause");
 	}
 	return(flag);
