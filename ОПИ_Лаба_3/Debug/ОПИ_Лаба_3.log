@@ -1,0 +1,4 @@
+﻿  Main.cpp
+C:\Users\anist\Downloads\ОПИ\ОПИ\ОПИ_Лаба_3\Main.cpp(120,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+C:\Users\anist\Downloads\ОПИ\ОПИ\ОПИ_Лаба_3\Main.cpp(316,7): warning C4101: COM_STR: неиспользованная локальная переменная
+  ОПИ_Лаба_3.vcxproj -> C:\Users\anist\Downloads\ОПИ\ОПИ\ОПИ_Лаба_3\Debug\ОПИ_Лаба_3.exe
