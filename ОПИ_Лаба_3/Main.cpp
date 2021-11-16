@@ -5,7 +5,7 @@
 #define DYNAMIC_MASS(int) car = new car_obj[num + 1]
 
 using namespace std;
-
+//обьявлены переменные
 bool* music;
 bool* light;
 bool* door;
